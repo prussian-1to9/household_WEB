@@ -30,13 +30,28 @@
     ```
     - `list`
 
-- settings\.py 추가
-    ```python
-    INSTALLED_APPS = [
-        'rest_framework',
-        '{new_app_names}',
-    ]
-    ```
+- settings\.py 수정
+    - 설정 추가
+        ```python
+        ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+        INSTALLED_APPS = [
+            # 이하의 문구 추가
+            'rest_framework',
+            '{new_app_names}',
+        ]
+        ```
+        - `list`
+
+    - 설정 수정
+        ```python
+        # 수정
+        TIME_ZONE = 'Asia/Seoul'
+
+        STATIC_URL = '/static/'
+        STATIC_ROOT = BASE_DIR / 'static'
+        ```
+    - 데이터베이스는 일단 기본 설정된 sqlite를 사용한다.
 
 - 새 migration 생성
     ```shell
@@ -44,8 +59,11 @@
     python {manage.py_path} makemigrations
     
     # 그 이후
-    python {mange.py_path} migrate
+    python {manage.py_path} migrate
     ```
+
+## django rest framework (DRF)
+
 
 ***
 ## 참고한 글
