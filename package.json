@@ -1,0 +1,37 @@
+{
+  "name": "household_web",
+  "version": "1.0.0",
+  "description": "- branch for javascript based project.",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "nodemon --exec ts-node -r tsconfig-paths/register ./src/server.ts",
+    "build": "npx ttsc -p ./tsconfig.json"
+  },
+  "author": "prussian1to9",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "nodemon": "^3.1.4",
+    "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.8.10",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.4",
+    "typescript-transform-paths": "^3.4.7"
+  },
+  "_moduleAliases": {
+    "@": "./dist",
+    "@_config": "./dist/config",
+    "@_routes": "./dist/routes"
+  }
+}
