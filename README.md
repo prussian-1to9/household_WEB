@@ -6,6 +6,12 @@
     - type script
 - mySQL
 
+## 코드 규칙 및 준수사항
+- 기본적으로 강제성을 위해 ts와 ES Lint를 사용하기 때문에 **코드 스타일 관련 규칙은 기재하지 않**습니다.
+- **`/src/api/**/controllers/*.ts`** : 비즈니스 로직은 `services/`에 작성되도록 합니다.
+- **`server.ts`의 로직이 길어질 경우** : express 설정 부분을 `app.ts`로 분리시켜, 핸들링이 분리될 수 있도록 해주세요.
+- **주석 작성** : 비즈니스 로직이 아닌 사항이라면 **최대한 doc 파일에 개발문서 작성**을 부탁드립니다.
+
 ## npm install
 - global 설치 목록 : **로컬 컴퓨터에 해당 버전or명령어로 설치**해 주어야 합니다.
 - publication, development 설치 목록 : 각각 배포/개발용 설치 모듈들로, **git clone 후 `npm i`로 일괄 설치 가능**합니다.
@@ -49,7 +55,7 @@
 HOUSEHOLD_WEB/
 │
 ├── dist/           # [git ignored] .ts 파일 컴파일 시 js파일이 저장됩니다. (파일구조는 /src와 동일)
-├── doc/            # README에서 생략된 개발문서를 작성합니다.
+├── doc/            # 개발문서를 작성합니다.
 ├── node-modules/   # [git ignored] npm install 시 설치한 패키지들이 저장됩니다.
 │
 ├── src/        # .ts 파일을 작성하는 디렉토리입니다.
@@ -85,6 +91,8 @@ HOUSEHOLD_WEB/
 ├── .env.dev        # [git ignored] 개발용 환경변수를 설정합니다.
 ├── .env.prod       # [git ignored] 실서버용 환경변수를 설정합니다.
 ├── .gitignore
+├── eslint.config.mjs   # ES Lint 설정 파일
+├── package-lock.json
 ├── package.json
 ├── README.md
 ├── tsconfig.json       # 타입스크립트 기본 설정 파일
@@ -92,15 +100,14 @@ HOUSEHOLD_WEB/
 ```
 
 
-## 준수 사항(필독 부탁드립니다.)
-- **`/src/api/**/controllers/*.ts`** : 비즈니스 로직은 `services/`에 작성되도록 합니다.
-- **`server.ts`의 로직이 길어질 경우** : express 설정 부분을 `app.ts`로 분리시켜, 핸들링이 분리될 수 있도록 해주세요.
-
 ***
+
 
 # Recommandation : VS Code extension for Development
 - **postman** : for API testing
     - CORS 설정으로 인해 request header의 origin 값을 `http://localhost` 또는 `http://127.0.0.1` 설정을 해 주어야 원활한 테스트가 가능합니다.
+- **★★★ ESLint** : for code format
+    - 해당 서버는 별도 ES Lint 설정이 없으므로, 깔끔한 코드 포맷팅을 원한다면 설정 바랍니다.
 - **snipets 관련**
     - Express Snippets : node js 모듈 express에 대한 스니펫을 지원합니다.
 - **Utilities**

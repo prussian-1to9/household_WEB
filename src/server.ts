@@ -19,7 +19,7 @@ app.use(cors(corsOptions)); // global CORS setting      : @_config/cors.ts
 
 /* ===== [error handler] ===== */
 // for 404 errors
-app.use((req:Request, res:Response, next:NextFunction) => {
+app.use((req: Request, res: Response, _next: NextFunction) => {
     res.status(404).json({
         method: req.method,
         url: req.url,
@@ -28,7 +28,7 @@ app.use((req:Request, res:Response, next:NextFunction) => {
     });
 });
 // default error handler
-app.use((err:any, req:Request, res:Response, next:NextFunction) => {
+app.use((err: any, req: Request, res: Response, _next: NextFunction) => {
     res.json({
         method: req.method,
         url: req.url,
