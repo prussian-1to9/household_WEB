@@ -2,7 +2,8 @@
 - branch for javascript based project.
 
 ## 사용 스택
-- node js (npm runtime) : 20.10.0
+- node js : 20.10.0 LTS
+    - npm : 10.8.2
 - typescript + ESLint
 - mySQL
 
