@@ -3,7 +3,7 @@
 
 ## 사용 스택
 - node js (npm runtime) : 20.10.0
-    - type script
+- typescript + ESLint
 - mySQL
 
 ## 코드 규칙 및 준수사항
@@ -12,20 +12,33 @@
 - **`server.ts`의 로직이 길어질 경우** : express 설정 부분을 `app.ts`로 분리시켜, 핸들링이 분리될 수 있도록 해주세요.
 - **주석 작성** : 비즈니스 로직이 아닌 사항이라면 **최대한 doc 파일에 개발문서 작성**을 부탁드립니다.
 
+### commit messages
+| heading   | 정의                                  |
+|:---------:|:--------------------------------------|
+| `FEAT`    | 신규 파일등록, 기능 변경&개발         |
+| `FIX`     | 오류 수정                             |
+| `REF`     | 리팩토링, 미사용 코드 삭제, 주석 보완 |
+| `TXT`     | 단순문구, 오타수정                    |
+| `DOC`     | 문서 파일 관련 작업 시                |
+
+
+***
+
+
 ## npm install
 - global 설치 목록 : **로컬 컴퓨터에 해당 버전or명령어로 설치**해 주어야 합니다.
 - publication, development 설치 목록 : 각각 배포/개발용 설치 모듈들로, **git clone 후 `npm i`로 일괄 설치 가능**합니다.
     ```shell
     # 축약버전
-    iCOOP_BE_API> npm i
+    HOUSEHOLD_WEB > npm i
     # 같은 명령어
-    iCOOP_BE_API > npm install
+    HOUSEHOOLD_WEB > npm install
     ```
 - 에러로그 없이 `/node_modules` 디렉토리가 생성되었다면 설치 완료입니다.
 
 
 ### global
-- npx : for type script init (**git clone을 한 경우 선택사항**입니다.)
+- npx : for typescript, eslint init & execution (**git clone을 한 경우 선택사항**입니다.)
     ```shell
     npm install -g npx
     ```

@@ -2,10 +2,10 @@
 
 ## 설치 및 프로젝트 설정
 - typescript는 js파일로 컴파일 후 사용되기 때문에, 반드시 **개발용으로 설치**하여야 합니다. **(`npm i`로 일괄 install 하였을 경우 생략 가능)**
-```shell
-npm i -D typescript # 설치
-npx tsc --init # tsconfig 파일 생성
-```
+    ```shell
+    npm i -D typescript # 설치
+    npx tsc --init # tsconfig 파일 생성
+    ```
 
 ## tsconfig.json 설정
 - 타입스크립트 작동 방식에 대해 설정하는 파일입니다.
@@ -14,6 +14,7 @@ npx tsc --init # tsconfig 파일 생성
 - 컴파일 되는 `outDir` 속성은 `/dist` 디렉토리로 지정하였습니다. 이에 따라, 아래와 같이 준수 바랍니다.
     - `/src/*` : **`.ts` 파일만** 위치
     - `/dist/*` : 컴파일 된 **`.js` 파일만** 위치
+- API 서버는 **strict 하게 설정**하여, 로직 작성 시 참고 부탁드립니다.
 
 ### tsconfig-paths 설정
 - .ts 파일 내에서 사용할 절대경로에 대한 설정입니다.

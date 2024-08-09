@@ -1,16 +1,27 @@
 {
     "ts-node": { // require 미설정시 오류 발생합니다. 꼭 기재해주세요. (node 20)
-        "require": ["tsconfig-paths/register", "typescript-transform-paths"]
+        "require": [
+            "tsconfig-paths/register",
+            "typescript-transform-paths"
+        ]
     },
     "compilerOptions": {
-      "baseUrl": "./", // baseUrl에 설정한 경로대로 절대경로 지정 : project 파일 root 경로
-      "paths": {       // 매핑할 alias - 실제 경로 매핑
-        "@/*": ["src/*"],
-        "@_config/*": ["src/config/*"],
-        "@_routes/*": ["src/routes/*"],
+        "baseUrl": "./", // baseUrl에 설정한 경로대로 절대경로 지정 : project 파일 root 경로
+        "paths": { // 매핑할 alias - 실제 경로 매핑
+            "@/*": [
+                "src/*"
+            ],
+            "@_config/*": [
+                "src/config/*"
+            ],
+            "@_routes/*": [
+                "src/routes/*"
+            ],
         },
         "plugins": [
-            { "transform": "typescript-transform-paths" }
+            {
+                "transform": "typescript-transform-paths"
+            }
         ]
     }
 }
