@@ -35,7 +35,7 @@ exit
 
 ## 환경설정을 위해 추가설치가 필요한 패키지
 ```bash
-yum install tar wget gzip -y
+yum install tar wget gzip git -y
 ```
 - tar, wget, gzip : 파일 수신, 압축 해제 등에 사용합니다.
 - 기호에 따른 선택 옵션
